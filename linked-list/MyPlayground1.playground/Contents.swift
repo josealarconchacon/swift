@@ -14,10 +14,10 @@ public class LinkedList<T> {
     public typealias Node = LinkedListNode<T>
     private var head: Node?
     
-    public var firstElement: Node? {
+    public var first_node: Node? {
         return head
     }
-    public var lastElement: Node? {
+    public var last_node: Node? {
         guard var current_node = head else {
             return nil
         }
@@ -26,7 +26,21 @@ public class LinkedList<T> {
         }
         return current_node
     }
+    // append
+    public func append(value: T) {
+        let new_node = Node(value: value)
+        // node in list
+        if let last = last_node {
+            new_node.previous = last
+            last.next = new_node
+        } else {
+            // no node in list
+            head = new_node
+        }
+        
+    }
 }
 
-let list = LinkedList<String>()
-list.firstElement
+let list = LinkedList<Int>()
+list.append(value: 2)
+list.append(value: 3)
