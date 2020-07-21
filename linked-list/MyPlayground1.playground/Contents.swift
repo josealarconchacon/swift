@@ -37,6 +37,17 @@ public class LinkedList<T> {
         return count
     }
     
+    public var print_node: String {
+        var array = "["
+        guard var node = head else { return array + "]"}
+            while let next = node.next {
+                array += "\(node.value), "
+                node = next
+            }
+        array += "\(node.value)"
+        return array + "]"
+    }
+    
     // append
     public func append(value: T) {
         let new_node = Node(value: value)
@@ -52,12 +63,13 @@ public class LinkedList<T> {
     }
 }
 
-let list = LinkedList<Int>()
-list.append(value: 2)
-list.append(value: 3)
+let list = LinkedList<String>()
+list.first_node
+list.last_node
 list.count_node
-list.append(value: 4)
-list.append(value: 5)
-list.append(value: 6)
-list.count_node
+list.append(value: "Hello")
+list.append(value: "Swift")
+list.print_node
+
+
 
