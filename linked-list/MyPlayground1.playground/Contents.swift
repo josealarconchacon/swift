@@ -26,6 +26,17 @@ public class LinkedList<T> {
         }
         return current_node
     }
+    
+    public var count_node: Int {
+        guard var node = head else { return 0}
+        var count = 1
+        while let next_value = node.next {
+            node = next_value
+            count += 1
+        }
+        return count
+    }
+    
     // append
     public func append(value: T) {
         let new_node = Node(value: value)
@@ -44,3 +55,9 @@ public class LinkedList<T> {
 let list = LinkedList<Int>()
 list.append(value: 2)
 list.append(value: 3)
+list.count_node
+list.append(value: 4)
+list.append(value: 5)
+list.append(value: 6)
+list.count_node
+
