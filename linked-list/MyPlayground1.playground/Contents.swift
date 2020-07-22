@@ -17,25 +17,6 @@ public class LinkedList<T> {
     public var first_node: Node? {
         return head
     }
-    public var last_node: Node? {
-        guard var current_node = head else {
-            return nil
-        }
-        while let next = head?.next {
-            current_node = next
-        }
-        return current_node
-    }
-    
-    public var count_node: Int {
-        guard var node = head else { return 0}
-        var count = 1
-        while let next_value = node.next {
-            node = next_value
-            count += 1
-        }
-        return count
-    }
     
     public var print_node: String {
         var array = "["
@@ -46,6 +27,26 @@ public class LinkedList<T> {
             }
         array += "\(node.value)"
         return array + "]"
+    }
+    
+    public var last_node: Node? {
+        guard var current_node = head else {
+            return nil
+        }
+        while let next = head!.next {
+            current_node = next
+        }
+        return current_node
+    }
+    
+    public var count_node: Int {
+        guard var node = head else { return 0}
+        var count = 1
+        while let next_value = node.next {
+            count += 1
+            node = next_value
+        }
+        return count
     }
     
     // append
@@ -59,7 +60,19 @@ public class LinkedList<T> {
             // no node in list
             head = new_node
         }
-        
+    }
+    // fetch Node at Index
+    public func node_at_index(atIndex index: Int) -> Node {
+        if index == 0 {
+            return head!
+        } else {
+            var node = head?.next
+            for _ in 1..<index {
+                node = node?.next
+                if node == nil { break}
+            }
+            return node!
+        }
     }
 }
 
@@ -68,8 +81,18 @@ list.first_node
 list.last_node
 list.count_node
 list.append(value: "Hello")
+list.count_node
 list.append(value: "Swift")
+list.count_node
 list.print_node
+list.append(value: "node")
+list.print_node
+
+list.node_at_index(atIndex: 2).value
+list.node_at_index(atIndex: 1).value
+list.node_at_index(atIndex: 0).value
+
+
 
 
 
