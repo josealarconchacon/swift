@@ -3,12 +3,12 @@ import UIKit
 // Given an array of integers, find if the array contains any duplicates.
 
 func containsDuplicate(_ nums: [Int]) -> Bool {
-    var num = [Int]()
+    var num = Set<Int>()
     for i in nums {
         if num.contains(i) {
             return true
         }
-        num.append(i)
+        num.insert(i)
     }
     return false
 }
