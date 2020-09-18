@@ -13,6 +13,7 @@ if allowance >= price + jucePrice {
 // logical operators
 var hungry = true
 var vegetarian = true
+var thereIsPie = true
 if hungry && !vegetarian {
     print("Let's eat steak!")
 } else if hungry && vegetarian {
@@ -20,3 +21,9 @@ if hungry && !vegetarian {
 } else {
     print("nevermind")
 }
+
+
+// ternary conditional
+hungry ? print("Is time to eat") : print("Let's wait 5 more minutes")
+hungry || thereIsPie ? print("Let's eat that Pie") : print("there is not pie")
+
