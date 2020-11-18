@@ -22,4 +22,10 @@ movieCategories.insert("Horror")
 print(movieCategories)
 
 // remove an item from a set
+if let removeComedy = movieCategories.remove("Comedy") {
+    print("\(removeComedy)? I'm over it.")
+} else {
+    print("I never much cared for that.")
+}
 
+// check whether a set contains a particular item
