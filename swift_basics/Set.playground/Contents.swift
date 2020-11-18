@@ -4,7 +4,7 @@ import UIKit
 var mySet = Set<Character>()
 mySet.insert("a")
 print(mySet)
-mySet = []
+
 
 
 // Set with an Array Literal
@@ -29,3 +29,13 @@ if let removeComedy = movieCategories.remove("Comedy") {
 }
 
 // check whether a set contains a particular item
+if movieCategories.contains("Action") {
+    print("Action is in me category")
+} else {
+    print("I am done")
+}
+
+// Iterating Over a Set
+for category in movieCategories.sorted() {
+    print(category)
+}
