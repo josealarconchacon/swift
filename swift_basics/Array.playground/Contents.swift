@@ -22,4 +22,33 @@ print(fourItem)
 var foodList: [String] = ["Eggs", "Milk","Bread", "Banana"]
 print("Food List contains \(fourItem.count) items")
 
+if foodList.isEmpty {
+    print("There is no food in the foodList")
+} else {
+    print("Food List has \(foodList.count) items")
+}
+// add a new item to the end of an array
+foodList.append("Mango")
+foodList += ["Cheese", "Chocolate"]
+
+// Retrieve a value from the array
+var firstItem = foodList[0]
+print(firstItem)
+
+// change an existing value at a given index
+foodList[1] = "Meat"
+print(foodList)
+
+// use subscript syntax to change a range of values at once
+foodList[1...3] = ["Apples","Brocoli"]
+print(foodList)
+
+// nsert an item into the array at a specified index
+foodList.insert("Maple Syrup", at: 2)
+print(foodList)
+
+let removeCheese = foodList.remove(at: 5)
+print(removeCheese)
+
+
 
