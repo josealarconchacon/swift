@@ -52,3 +52,10 @@ print(removeCheese)
 
 
 
+//  Iterating Over an Array
+for (index, value) in foodList.enumerated() {
+    print("Index \(index + 1), \(value)")
+}
+
+
+
