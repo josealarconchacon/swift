@@ -17,3 +17,9 @@ var anotherTwoItem = Array(repeating: 2.5, count: 2) // [2.5, 2.5]
 var fourItem = twoItem + anotherTwoItem
 print(fourItem)
 
+
+//Array with an Array Literal
+var foodList: [String] = ["Eggs", "Milk","Bread", "Banana"]
+print("Food List contains \(fourItem.count) items")
+
+
