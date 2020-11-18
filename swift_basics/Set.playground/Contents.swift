@@ -39,3 +39,23 @@ if movieCategories.contains("Action") {
 for category in movieCategories.sorted() {
     print(category)
 }
+
+
+let first: Set = [1, 3, 5, 7, 9]
+let second: Set = [0, 2, 4, 6, 8]
+let thrid: Set = [2, 3, 5, 7]
+
+print(first.union(second).sorted())  // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(first.symmetricDifference(thrid).sorted()) // [1, 2, 9]
+
+// Set Membership and Equality
+    let firstS: Set = ["a", "b"]
+    let seconS: Set = ["g", "f", "r", "a", "b"]
+    let thirdS: Set = ["j", "k"]
+        firstS.isSubset(of: seconS)  // true
+        seconS.isSuperset(of: firstS)// true
+        seconS.isDisjoint(with: thirdS)// true
+
+
+
+ 
