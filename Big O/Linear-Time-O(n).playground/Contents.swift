@@ -42,3 +42,25 @@ func sum_up(arr: [Int]) -> Int {
     // return the sum of all integer from the input array
     return result
 }
+
+
+
+var firstArray = generateRandomArray(size: 100, maxVal: UInt32.max)
+var execTime = BenchTime.measureBlock {
+    _ = sum_up(arr: firstArray)
+}
+print("The average execution for firstArray containing 100 element is \(execTime)")
+
+
+var secondArray = generateRandomArray(size: 1000, maxVal: UInt32.max)
+execTime = BenchTime.measureBlock(closure: {
+    _ = sum_up(arr: secondArray)
+})
+print("The average execution for secondArray containing 1000 element is \(execTime)")
+
+
+var thridArray = generateRandomArray(size: 10000, maxVal: UInt32.max)
+execTime = BenchTime.measureBlock(closure: {
+    _ = sum_up(arr: thridArray)
+})
+print("The average execution for thridArray containing 10000 element is \(execTime)")
