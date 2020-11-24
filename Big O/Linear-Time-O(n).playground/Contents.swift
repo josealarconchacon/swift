@@ -18,3 +18,27 @@ public class BenchTime {
     }
 }
 
+
+func generateRandomArray(size: Int, maxVal: UInt32) -> [Int] {
+    guard size > 0 else {
+        return [Int]()
+    }
+    var finalResult = [Int](repeating: 0, count: size)
+    for nums in 0..<size {
+        // use arc4random_uniform to create random content for the array
+        finalResult[nums] = Int(arc4random_uniform(maxVal))
+    }
+    return finalResult
+}
+
+// func to sum up the element for the input array
+func sum_up(arr: [Int]) -> Int {
+    // the sum of the element get store in result variable
+    var result: Int = 0
+    // iterate through the element of the input array
+    for i in 0..<arr.count {
+        result += arr[i]
+    }
+    // return the sum of all integer from the input array
+    return result
+}
