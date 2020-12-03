@@ -6,7 +6,6 @@ import UIKit
 var name: Optional<String> = "Jhon"
 print("Hello \(name)")
 
-
 // Unconditional unwrapping
 //print("Hello \(name!)")
 
@@ -18,3 +17,16 @@ if let myName = name {
 
 // Nil coalescing operator
 print("Hello \(name ?? "Tomy")")
+
+
+
+
+//Accessing an optional through the property of an object
+// Optional chaining
+class Person{
+    var name: String? = nil
+}
+
+let john = Person()
+john.name = "John"
+print("Hello \(john.name!.uppercased())")
