@@ -9,6 +9,7 @@ struct LinkedList<Value> {
         return head == nil
     }
     
+    // push
     mutating func push(_ value :Value) {
         // push the new value in the place of the head
         head = Node(value: value, next: head)
@@ -17,6 +18,7 @@ struct LinkedList<Value> {
         }
     }
     
+    // append
     mutating func append(_ value: Value) {
         // check if List is not empty
         guard !isEmpty else {
@@ -30,6 +32,22 @@ struct LinkedList<Value> {
         tail!.next = node
         // set the tail to the existing node
         tail = node
+    }
+    
+    // insert
+    func node(at index: Int) -> Node<Value>? {
+        var currentIndex = 0
+        var currentNode = head
+        
+        while currentNode != nil && currentIndex < index {
+            currentNode = currentNode?.next
+            currentIndex += 1
+        }
+        return currentNode
+    }
+    
+    func insert(_ value: Value, after node: Node<Value>) {
+        node.next = Node(value: value, next: node.next)
     }
     
     // instance of the Linked List
@@ -77,8 +95,12 @@ print(list) // (33 -> 3 -> 2)
 list.push(44)
 print(list) // 44 -> 33 -> 3 -> 2
 
-
 list.append(7)
 print(list)  // 44 -> 33 -> 3 -> 2 -> 7
+
+let middleNode = list.node(at: 1)!
+list.insert(200, after: middleNode)
+print(list) // 44 -> 33 -> 200 -> 3 -> 2 -> 7
+
 
  
