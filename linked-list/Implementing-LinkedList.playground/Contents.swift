@@ -63,6 +63,29 @@ struct LinkedList<Value> {
         return head?.value
     }
     
+    // removeLast
+    mutating func removeLast() -> Value? {
+        // check if list is empty
+        guard let head = head else {
+            return nil
+        }
+        // check if there is only one element in the list
+        guard head.next != nil else {
+            return pop()
+        }
+        // search in the list for a particular element
+        var previous = head
+        var current = head
+        
+        while let next = current.next {
+            previous = current
+            current = next
+        }
+        previous.next = nil
+        tail = previous
+        return current.value
+    }
+    
     // instance of the Linked List
     init() {}
 }
@@ -122,5 +145,9 @@ print("After pop")
 list.pop() // 33 -> 200 -> 3 -> 2 -> 7
 print(list)
 
-
+print("Before removing last value")
+print(list) // 33 -> 200 -> 3 -> 2 -> 7
+print("After removing last value")
+list.removeLast()
+print(list) // 33 -> 200 -> 3 -> 2
  
