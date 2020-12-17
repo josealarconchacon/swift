@@ -1,5 +1,23 @@
 import UIKit
 
+struct LinkedList<Value> {
+    var head: Node<Value>?
+    var tail: Node<Value>?
+    
+    // create a property to check whether the Linked List is empty or not
+    var isEmpty: Bool {
+        return head == nil
+    }
+    
+    // instance of the Linked List
+    init() {}
+}
+
+
+
+
+
+// Implement a Node Class
 class Node<Value> {
     var value: Value
     var next: Node?
@@ -22,11 +40,5 @@ extension Node: CustomStringConvertible {
     }
 }
 
-let node1 = Node(value: 1)
-let node2 = Node(value: 2)
-let node3 = Node(value: 3)
-
-node1.next = node2
-node2.next = node3
-print(node1) // 1 -> 2 -> 3
+let list = LinkedList<Int>()
  
