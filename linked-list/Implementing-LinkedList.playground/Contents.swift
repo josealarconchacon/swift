@@ -9,12 +9,25 @@ struct LinkedList<Value> {
         return head == nil
     }
     
+    mutating func push(_ value :Value) {
+        // push the new value in the place of the head
+        head = Node(value: value, next: head)
+        if tail == nil {
+            tail = head
+        }
+    }
     // instance of the Linked List
     init() {}
 }
 
-
-
+extension LinkedList: CustomStringConvertible {
+    var description: String {
+        guard let head = head else {
+            return "Empty List"
+        }
+        return String(describing: head)
+    }
+}
 
 
 // Implement a Node Class
@@ -40,5 +53,13 @@ extension Node: CustomStringConvertible {
     }
 }
 
-let list = LinkedList<Int>()
+var list = LinkedList<Int>()
+list.push(2)
+list.push(3)
+list.push(33)
+print(list) // (33 -> 3 -> 2)
+
+list.push(44)
+print(list) // 44 -> 33 -> 3 -> 2
+
  
