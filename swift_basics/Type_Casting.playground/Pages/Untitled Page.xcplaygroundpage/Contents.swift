@@ -26,4 +26,22 @@ class Skateboard: Moveable {
 }
 
 // an array that holds a collection of objects
-let inventory: = [Car(), Skateboard(),Car(), Skateboard(),Car(), Skateboard()]
+let inventory: [Moveable] = [Car(), Skateboard(),
+                             Car(), Skateboard(),
+                             Car(), Car(), Skateboard()]
+
+var number_of_car = 0
+var number_of_skateboard = 0
+
+
+for element in inventory {
+    if element is Car {
+        number_of_car += 1
+    }
+    if element  is Skateboard {
+        number_of_skateboard += 1
+    }
+}
+
+number_of_car
+number_of_car
