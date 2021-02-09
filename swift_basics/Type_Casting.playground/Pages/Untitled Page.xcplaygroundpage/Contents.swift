@@ -45,3 +45,9 @@ for element in inventory {
 
 number_of_car
 number_of_car
+
+
+// Downcasting example
+if let car = inventory[0] as? Car {
+    car.hunk()
+}
