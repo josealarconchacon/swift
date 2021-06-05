@@ -33,3 +33,30 @@ func is_equal(_ arr: [Int]) -> Bool {
 }
 print(is_equal([1, 2, 3]))
 print(is_equal([1, 2, 3, 1]))
+
+print("=================================================")
+// .map{$0.sorted()}
+
+func isValid(_ matrix: [[Int]]) -> String {
+    let sorted = matrix.map{$0.sorted()}
+    
+    for row in 0..<sorted.count {
+        for colum in 0..<sorted[row].count {
+            if matrix[row] != matrix[colum] && matrix.contains([1,2,3]){
+                return "VALID"
+            }
+           
+        }
+    }
+    return "INVALID"
+}
+
+print(isValid([[1, 2, 3], [2,3,1], [3,1,2]]))
+print(isValid([[1, 2, 3], [1,2,3], [1,2,3]]))
+print(isValid([[3, 5, 7], [2,4,8], [9,1,6]]))
+
+
+
+
+
+

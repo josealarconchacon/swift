@@ -14,3 +14,6 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
 }
 let array = [1,3,5,7,10]
 print(twoSum(array, 11))
+
+
+
