@@ -1,11 +1,15 @@
 import UIKit
 
-enum Pos: Int {
-    case f,S,T,O
+struct Stack<T> {
+    // hold value using an array
+    private var store : [T] = []
+    
+    init(){}
 }
-print(Pos.O.rawValue)
+extension Stack: CustomStringConvertible {
+    var description: String {
+        let stack_element = store.map{"\($0)"}.reversed().joined(separator: "\n")
+        return stack_element
+    }
+}
 
-let loopd = 5
-repeat {
-    print(loopd)
-} while loopd < 6' </p>
