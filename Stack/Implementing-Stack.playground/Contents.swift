@@ -7,8 +7,8 @@ struct Stack<T> {
     init(){}
     
     // push item into the stack
-    mutating func push(_element: T) {
-        store.append(_element)
+    mutating func push(_ element: T) {
+        store.append(element)
     }
     
     // pop element from the stack
@@ -22,4 +22,15 @@ extension Stack: CustomStringConvertible {
         return stack_element
     }
 }
+
+var stack = Stack<Int>()
+stack.push(100)
+stack.push(120)
+stack.push(200)
+print("before")
+print(stack)
+
+print("after")
+stack.pop()
+print(stack)
 
